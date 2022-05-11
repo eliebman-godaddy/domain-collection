@@ -1,0 +1,95 @@
+{
+  "name": "domain-collection",
+  "version": "0.0.0",
+  "description": "A trophy case where users can view their domains and share to social media",
+  "scripts": {
+    "build": "gasket build",
+    "start": "gasket start",
+    "local": "gasket local",
+    "analyze": "gasket analyze",
+    "upload-coverage": "upload-coverage domain-collection",
+    "size-limit": "size-limit",
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint --ext .js,.jsx .",
+    "lint:fix": "npm run lint -- --fix",
+    "stylelint": "stylelint \"**/*.scss\"",
+    "stylelint:fix": "npm run stylelint -- --fix",
+    "posttest": "npm run lint && npm run stylelint"
+  },
+  "dependencies": {
+    "@gasket/assets": "^6.17.0",
+    "@gasket/cli": "^5.6.1",
+    "@gasket/log": "^6.20.2",
+    "@gasket/nextjs": "^6.20.3",
+    "@gasket/plugin-jest": "^6.17.1",
+    "@gasket/react-intl": "^6.20.3",
+    "@gasket/redux": "^6.20.2",
+    "@godaddy/gasket-auth": "^2.5.2",
+    "@godaddy/gasket-next": "^2.12.4",
+    "@godaddy/gasket-preset-webapp": "^2.16.6",
+    "@rigor/upload-coverage": "^1.0.0",
+    "@size-limit/preset-big-lib": "^7.0.5",
+    "@ux/icon": "^2200.0.11",
+    "@ux/uxcore2": "^2200.0.11",
+    "@ux/webpack-config": "^2200.0.11",
+    "browserslist-config-godaddy": "^3.0.0",
+    "express": "^4.16.3",
+    "lodash.merge": "^4.6.0",
+    "next": "^12.0.8",
+    "next-redux-wrapper": "^7.0.5",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-intl": "^5.10.13",
+    "react-redux": "^7.1.0",
+    "react-transition-group": "^4.3.0",
+    "redux": "^4.0.5",
+    "size-limit": "^7.0.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@godaddy/eslint-plugin-react-intl": "^1.2.0",
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
+    "eslint": ">=6.0.0",
+    "eslint-config-godaddy-react": "^8.0.0",
+    "eslint-config-next": "^12.1.0",
+    "file-loader": "^6.2.0",
+    "jest": "^27.4.3",
+    "postcss": "^8.4.5",
+    "sass": "^1.26.10",
+    "stylelint": "^12.0.0",
+    "stylelint-config-godaddy": "^0.4.0",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.21.2"
+  },
+  "browserslist": [
+    "extends browserslist-config-godaddy"
+  ],
+  "eslintConfig": {
+    "extends": [
+      "godaddy-react",
+      "plugin:@godaddy/react-intl/recommended",
+      "next"
+    ],
+    "settings": {
+      "localeFiles": [
+        "public/locales/en-US.json"
+      ]
+    },
+    "env": {
+      "jest": true
+    }
+  },
+  "stylelint": {
+    "extends": [
+      "stylelint-config-godaddy"
+    ]
+  },
+  "eslintIgnore": [
+    "coverage/",
+    "build/"
+  ]
+}
